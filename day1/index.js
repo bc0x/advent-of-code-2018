@@ -7,14 +7,12 @@ const day1part1 = (data) => {
 
 const day1part2 = (data) => {
   const array = data.split("\n").map(Number);
-  let found = false;
   let frequency = 0;
   let frequencies = {};
   let idx = 0;
-  while (!found) {
+  while (true) {
     frequency += array[idx];
-    if (frequencies[frequency] !== undefined) {
-      found = true;
+    if (frequencies[frequency]) {
       return frequency;
     }
     frequencies[frequency] = true;
