@@ -8,14 +8,14 @@ const day1part1 = (data) => {
 const day1part2 = (data) => {
   const array = data.split("\n").map(Number);
   let frequency = 0;
-  let frequencies = {};
+  let seen = {};
   let idx = 0;
   while (true) {
     frequency += array[idx];
-    if (frequencies[frequency]) {
+    if (seen[frequency]) {
       return frequency;
     }
-    frequencies[frequency] = true;
+    seen[frequency] = true;
     idx === array.length - 1 ? (idx = 0) : idx++;
   }
 }
